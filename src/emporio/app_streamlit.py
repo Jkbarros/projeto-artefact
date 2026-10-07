@@ -14,7 +14,7 @@ from emporio.memory import (
     listar_sessoes,
     salvar_mensagem,
 )
-from emporio.prompts import NOME_ATENDENTE
+from emporio.prompts import IDIOMAS, NOME_ATENDENTE
 
 
 def _nova_sessao() -> str:
@@ -56,6 +56,12 @@ def _barra_lateral() -> None:
                 st.rerun()
 
         st.divider()
+        st.session_state.idioma = st.selectbox(
+            "Idioma / Language",
+            options=list(IDIOMAS.keys()),
+            format_func=lambda c: IDIOMAS[c],
+            index=0,
+        )
         st.session_state.mostrar_tools = st.checkbox("Mostrar ferramentas usadas", value=False)
         if st.button("🗑️ Apagar esta conversa", use_container_width=True):
             apagar_sessao(st.session_state.session_id)
@@ -91,7 +97,11 @@ def main() -> None:
 
     with st.chat_message("assistant"):
         with st.spinner(f"{NOME_ATENDENTE} está digitando..."):
-            resposta = responder(entrada, contexto_anterior)
+            resposta = responder(
+                entrada,
+                contexto_anterior,
+                idioma=st.session_state.get("idioma", "pt"),
+            )
         st.markdown(resposta.texto)
         if st.session_state.get("mostrar_tools") and resposta.ferramentas:
             with st.expander("Ferramentas consultadas"):

@@ -8,6 +8,16 @@ def test_system_prompt_menciona_atendente():
     assert "ferramenta" in prompt.lower() or "consultar" in prompt.lower()
 
 
+def test_system_prompt_ingles():
+    prompt = obter_system_prompt("en")
+    assert "English" in prompt
+
+
+def test_system_prompt_idioma_invalido_cai_no_padrao():
+    prompt = obter_system_prompt("zz")
+    assert "português" in prompt.lower()
+
+
 def test_despacho_buscar_produtos():
     r = executar_ferramenta(
         "buscar_produtos",

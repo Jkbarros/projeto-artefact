@@ -7,7 +7,7 @@ from collections.abc import Callable
 from typing import Any
 
 from emporio.tools.horario import loja_aberta_agora
-from emporio.tools.pedidos import consultar_pedido
+from emporio.tools.pedidos import consultar_pedido, listar_pedidos_do_cliente
 from emporio.tools.politicas import consultar_politicas
 from emporio.tools.produtos import (
     buscar_produtos,
@@ -76,10 +76,33 @@ FERRAMENTAS_OPENAI: list[dict[str, Any]] = [
     {
         "type": "function",
         "function": {
+            "name": "listar_pedidos_do_cliente",
+            "description": (
+                "Lista os números de pedido (id_pedido) do cliente quando ele não sabe "
+                "o número, mas informa e-mail ou telefone cadastrado. Não mostra pedidos de terceiros."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "identificacao": {
+                        "type": "string",
+                        "description": "E-mail ou telefone cadastrado na loja.",
+                    },
+                    "limite": {"type": "integer", "description": "Máximo de pedidos listados."},
+                },
+                "required": ["identificacao"],
+                "additionalProperties": False,
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "consultar_pedido",
             "description": (
-                "Consulta status de pedido. Obrigatório id_pedido e identificacao "
-                "(e-mail ou telefone cadastrado) por privacidade."
+                "Detalhes de um pedido (status, itens, rastreio). Obrigatório id_pedido e "
+                "identificacao (e-mail ou telefone). Se o cliente não tiver o número, use "
+                "listar_pedidos_do_cliente antes."
             ),
             "parameters": {
                 "type": "object",
@@ -131,6 +154,7 @@ _IMPLEMENTACOES: dict[str, Callable[..., dict[str, Any]]] = {
     "buscar_produtos": buscar_produtos,
     "consultar_produto": consultar_produto,
     "consultar_promocoes": consultar_promocoes,
+    "listar_pedidos_do_cliente": listar_pedidos_do_cliente,
     "consultar_pedido": consultar_pedido,
     "consultar_politicas": consultar_politicas,
     "loja_aberta_agora": lambda **_: loja_aberta_agora(),

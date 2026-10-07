@@ -21,4 +21,6 @@ Registro das escolhas do projeto (base para o README final).
 
 **Persona (Fase 5):** atendente **Lúcia** — tom acolhedor musical, no máximo 1 emoji por mensagem (`prompts.py`).
 
+**Bilíngue (opção B):** seletor PT/EN na interface; o idioma é passado ao `responder(..., idioma=)` e injetado no system prompt. Dados (catálogo, PDF) permanecem em PT; o agente traduz a explicação.
+
 **Fase 2:** arquitetura fechada — próximo passo é **Fase 3** (tratamento de dados + build do índice RAG).

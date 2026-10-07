@@ -10,6 +10,7 @@ from emporio.agent import responder
 def main() -> None:
     parser = argparse.ArgumentParser(description="Chat Empório da Música (CLI)")
     parser.add_argument("--verbose", action="store_true", help="Mostra tools chamadas")
+    parser.add_argument("--idioma", default="pt", choices=["pt", "en"], help="Idioma das respostas")
     args = parser.parse_args()
 
     historico: list[dict[str, str]] = []
@@ -27,7 +28,7 @@ def main() -> None:
             print("Até logo!")
             break
 
-        saida = responder(entrada, historico)
+        saida = responder(entrada, historico, idioma=args.idioma)
         print(f"\nAtendente: {saida.texto}\n")
 
         if args.verbose and saida.ferramentas:

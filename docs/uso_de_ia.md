@@ -19,6 +19,12 @@ Registro para a seção obrigatória do README.
 |------------------|----------------------------------|
 | Análise dos CSVs/PDF, `docs/exploracao_dados.md`, atualização de `docs/suposicoes.md` | **Aprovou** o resumo da Fase 1; **commits ficam a cargo do candidato** |
 
+## Fase 7 (avaliação) + bilíngue
+
+| O que a IA gerou | O que o usuário revisou/decidiu |
+|------------------|----------------------------------|
+| Seletor de idioma PT/EN (opção B) em `prompts.py`/`agent.py`/UI/CLI; `docs/perguntas_teste.md` | Pediu lista de perguntas e suporte a inglês; commits pelo candidato |
+
 ## Fase 6 (interface e persistência)
 
 | O que a IA gerou | O que o usuário revisou/decidiu |

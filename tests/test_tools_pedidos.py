@@ -1,4 +1,16 @@
-from emporio.tools.pedidos import consultar_pedido
+from emporio.tools.pedidos import consultar_pedido, listar_pedidos_do_cliente
+
+
+def test_listar_pedidos_retorna_numeros():
+    r = listar_pedidos_do_cliente("pedro.oliveira@jmail.com")
+    assert r["encontrado"] is True
+    assert r["total"] >= 1
+    assert any(p["id_pedido"] == 1 for p in r["pedidos"])
+
+
+def test_listar_pedidos_identidade_invalida():
+    r = listar_pedidos_do_cliente("naoexiste@email.com")
+    assert r["encontrado"] is False
 
 
 def test_pedido_com_email_correto():

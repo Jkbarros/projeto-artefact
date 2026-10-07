@@ -60,16 +60,18 @@ def responder(
     historico: list[dict[str, str]] | None = None,
     *,
     modelo: str | None = None,
+    idioma: str = "pt",
 ) -> RespostaAgente:
     """
     Processa uma mensagem do cliente e devolve a resposta final do agente.
 
     `historico` deve ser lista OpenAI-style (user/assistant), sem system.
+    `idioma` controla a língua da resposta ("pt" ou "en").
     """
     cliente = OpenAI(api_key=obter_chave_openai())
     nome_modelo = modelo or obter_modelo_openai()
     mensagens: list[dict[str, Any]] = [
-        {"role": "system", "content": obter_system_prompt()},
+        {"role": "system", "content": obter_system_prompt(idioma)},
         *(historico or []),
         {"role": "user", "content": mensagem_usuario},
     ]
