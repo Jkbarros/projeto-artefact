@@ -12,3 +12,4 @@ Toda ambiguidade ou lacuna nos dados da loja será registrada aqui (nunca invent
 | 2026-10-06 | Fuso horário “loja aberta agora” = `America/Campo_Grande` | Campo Grande/MS (manual e clientes) |
 | 2026-10-06 | Validação de identidade no pedido aceita **e-mail completo** OU os **8 últimos dígitos do telefone** cadastrado | Equilíbrio entre segurança e usabilidade; dados disponíveis em `customers` |
 | 2026-10-06 | `loja_aberta_agora` **não** considera feriados (só domingo como dia fechado fixo) | Manual não lista feriados; evita inventar datas |
+| 2026-10-06 | Persona: **Lúcia**, assistente virtual; tom **acolhedor musical**; até **1 emoji leve** por mensagem | Escolha do candidato; alinhada ao manual (saudação, consulta ao sistema, resposta clara) |

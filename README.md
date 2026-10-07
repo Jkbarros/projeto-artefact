@@ -33,6 +33,7 @@ copy .env.example .env
 $env:PYTHONPATH = "src"
 python -m emporio.testar_conexao
 python -m emporio.data_prep
+python -m emporio.cli --verbose
 pytest
 ```
 

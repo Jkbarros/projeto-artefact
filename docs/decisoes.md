@@ -19,4 +19,6 @@ Registro das escolhas do projeto (base para o README final).
 
 **Nota:** catálogo, pedidos e promoções continuam em **Pandas**. RAG cobre **texto de políticas** (PDF e futuros documentos).
 
+**Persona (Fase 5):** atendente **Lúcia** — tom acolhedor musical, no máximo 1 emoji por mensagem (`prompts.py`).
+
 **Fase 2:** arquitetura fechada — próximo passo é **Fase 3** (tratamento de dados + build do índice RAG).
