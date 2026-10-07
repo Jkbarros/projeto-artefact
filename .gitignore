@@ -4,6 +4,7 @@
 *.db
 data/processed/*.parquet
 data/processed/manifesto.json
+data/processed/conversas.db
 data/processed/chroma/
 .pytest_cache/
 .ruff_cache/

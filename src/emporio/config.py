@@ -16,6 +16,10 @@ MODELO_EMBEDDING_PADRAO = "text-embedding-3-small"
 PASTA_CHROMA = PASTA_DADOS_PROCESSADOS / "chroma"
 NOME_COLECAO_POLITICAS = "politicas_loja"
 ARQUIVO_MANIFESTO = PASTA_DADOS_PROCESSADOS / "manifesto.json"
+ARQUIVO_HISTORICO = PASTA_DADOS_PROCESSADOS / "conversas.db"
+
+# Nº máximo de mensagens (user/assistant) enviadas ao modelo como contexto.
+MAX_MENSAGENS_CONTEXTO = 12
 
 
 def carregar_configuracao() -> None:

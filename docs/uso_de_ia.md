@@ -19,6 +19,12 @@ Registro para a seção obrigatória do README.
 |------------------|----------------------------------|
 | Análise dos CSVs/PDF, `docs/exploracao_dados.md`, atualização de `docs/suposicoes.md` | **Aprovou** o resumo da Fase 1; **commits ficam a cargo do candidato** |
 
+## Fase 6 (interface e persistência)
+
+| O que a IA gerou | O que o usuário revisou/decidiu |
+|------------------|----------------------------------|
+| `memory.py` (SQLite por session_id, limite de contexto), `app_streamlit.py`, testes de memória | Aprovou implementação da Fase 6; commits pelo candidato |
+
 ## Fase 5 (agente e persona)
 
 | O que a IA gerou | O que o usuário revisou/decidiu |

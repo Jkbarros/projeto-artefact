@@ -34,6 +34,7 @@ $env:PYTHONPATH = "src"
 python -m emporio.testar_conexao
 python -m emporio.data_prep
 python -m emporio.cli --verbose
+streamlit run src/emporio/app_streamlit.py
 pytest
 ```
 
