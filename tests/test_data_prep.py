@@ -2,8 +2,12 @@ import json
 
 import pandas as pd
 
-from emporio.config import ARQUIVO_MANIFESTO, PASTA_DADOS_PROCESSADOS
-from emporio.dados.repositorio import carregar_dados_processados, dados_processados_existem, limpar_cache
+from emporio.config import ARQUIVO_MANIFESTO
+from emporio.dados.repositorio import (
+    carregar_dados_processados,
+    dados_processados_existem,
+    limpar_cache,
+)
 from emporio.dados.transformar import transformar_produtos
 from emporio.data_prep import executar_pipeline
 

@@ -19,6 +19,12 @@ Registro para a seção obrigatória do README.
 |------------------|----------------------------------|
 | Análise dos CSVs/PDF, `docs/exploracao_dados.md`, atualização de `docs/suposicoes.md` | **Aprovou** o resumo da Fase 1; **commits ficam a cargo do candidato** |
 
+## Fase 4 (ferramentas do agente)
+
+| O que a IA gerou | O que o usuário revisou/decidiu |
+|------------------|----------------------------------|
+| Tools `buscar_produtos`, `consultar_produto`, `consultar_promocoes`, `consultar_pedido` (com validação de identidade), `consultar_politicas` (RAG), `loja_aberta_agora` (fuso Campo Grande) + 21 testes | Aprovou implementação da Fase 4; commits pelo candidato |
+
 ## Fase 3 (tratamento de dados)
 
 | O que a IA gerou | O que o usuário revisou/decidiu |

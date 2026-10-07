@@ -49,7 +49,7 @@ def indice_politicas_existe() -> bool:
             embedding_function=_funcao_embedding(),
         )
         return colecao.count() > 0
-    except Exception:
+    except Exception:  # noqa: BLE001 - coleção ausente/corrompida = índice inexistente
         return False
 
 
@@ -58,7 +58,7 @@ def obter_colecao(recriar: bool = False) -> Collection:
     if recriar and PASTA_CHROMA.is_dir():
         try:
             cliente.delete_collection(NOME_COLECAO_POLITICAS)
-        except Exception:
+        except Exception:  # noqa: BLE001,S110 - coleção pode não existir ainda
             pass
 
     return cliente.get_or_create_collection(

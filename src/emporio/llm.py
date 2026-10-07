@@ -3,14 +3,10 @@
 from __future__ import annotations
 
 import time
-from typing import TYPE_CHECKING
 
 from openai import APIError, OpenAI, RateLimitError
 
 from emporio.config import obter_chave_openai, obter_modelo_openai
-
-if TYPE_CHECKING:
-    pass
 
 
 class ErroLimiteTaxa(Exception):
