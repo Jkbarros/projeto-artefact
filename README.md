@@ -32,8 +32,11 @@ copy .env.example .env
 # Edite .env e coloque sua OPENAI_API_KEY (não commite)
 $env:PYTHONPATH = "src"
 python -m emporio.testar_conexao
+python -m emporio.data_prep
 pytest
 ```
+
+Detalhes do pipeline: [docs/tratamento_dados.md](docs/tratamento_dados.md).
 
 ## Repositório
 

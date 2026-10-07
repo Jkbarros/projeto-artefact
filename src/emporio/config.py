@@ -12,6 +12,10 @@ PASTA_DADOS_BRUTOS = RAIZ_PROJETO / "data" / "raw"
 PASTA_DADOS_PROCESSADOS = RAIZ_PROJETO / "data" / "processed"
 
 MODELO_OPENAI_PADRAO = "gpt-4o-mini"
+MODELO_EMBEDDING_PADRAO = "text-embedding-3-small"
+PASTA_CHROMA = PASTA_DADOS_PROCESSADOS / "chroma"
+NOME_COLECAO_POLITICAS = "politicas_loja"
+ARQUIVO_MANIFESTO = PASTA_DADOS_PROCESSADOS / "manifesto.json"
 
 
 def carregar_configuracao() -> None:

@@ -19,6 +19,12 @@ Registro para a seção obrigatória do README.
 |------------------|----------------------------------|
 | Análise dos CSVs/PDF, `docs/exploracao_dados.md`, atualização de `docs/suposicoes.md` | **Aprovou** o resumo da Fase 1; **commits ficam a cargo do candidato** |
 
+## Fase 3 (tratamento de dados)
+
+| O que a IA gerou | O que o usuário revisou/decidiu |
+|------------------|----------------------------------|
+| `data_prep.py`, módulos `dados/` e `rag/`, testes, `docs/tratamento_dados.md` | Aprovou implementação da Fase 3; commits pelo candidato |
+
 ## Fase 2 (arquitetura)
 
 | O que a IA gerou | O que o usuário revisou/decidiu |
